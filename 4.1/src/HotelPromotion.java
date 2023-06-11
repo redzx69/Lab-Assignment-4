@@ -17,7 +17,8 @@ public class HotelPromotion {
         this.deposit = deposit;
     }
 
-    public void setHotelPromotion(String bookingCode, String customerName, String phoneNo, char promotionType, int day, Room roomReserve, double deposit) {
+    public void setHotelPromotion(String bookingCode, String customerName, String phoneNo, char promotionType, int day,
+            Room roomReserve, double deposit) {
         this.bookingCode = bookingCode;
         this.customerName = customerName;
         this.phoneNo = phoneNo;
@@ -55,7 +56,7 @@ public class HotelPromotion {
         return deposit;
     }
 
-    //processors
+    // processors
     public double calculatePromotion() {
         double price = 0.0;
         switch (promotionType) {
@@ -79,7 +80,18 @@ public class HotelPromotion {
         return price;
     }
 
-    public boolean isSameBlock() {
-        
+    // compares two blocks is the same
+    public boolean isSameBlock(HotelPromotion hotelPromotion) {
+        String block1 = getRoomReserve().getBlock();
+        String block2 = hotelPromotion.getRoomReserve().getBlock();
+        if (block1.equals(block2)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String toString() {
+        return String.format("Booking code: %s\nCustomer name: %s\nPhone number: %s\nPromotion type: %cLength of stay: %d day(s)\nRoom reserve: %s\nDeposit: RM%.2f", bookingCode, customerName, phoneNo, promotionType, day, roomReserve, deposit);
     }
 }
