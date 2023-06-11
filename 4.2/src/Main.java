@@ -5,10 +5,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Lorry Rental System");
         System.out.println();
-
         System.out.print("Enter the amount of array: ");
         int size = input.nextInt();
-
         input.nextLine();
         System.out.println();
 
@@ -18,29 +16,21 @@ public class Main {
         double travelDistance;
         char lorryType;
         boolean driver;
-
         for (int i = 0; i < size; i++) {
             System.out.print("Enter name (e.g. Ali bin Abu): ");
             name = input.nextLine();
-
             System.out.print("Enter contact number (e.g. 0123456789): ");
             contactNo = input.nextLine();
-
             System.out.print("Enter street name (e.g. Jalan 1): ");
             streetName = input.nextLine();
-
             System.out.print("Enter district (e.g. Cheras): ");
             district = input.nextLine();
-
             System.out.print("Enter state (e.g. Selangor): ");
             state = input.nextLine();
-
             System.out.print("Enter travel distance (KM): ");
             travelDistance = input.nextDouble();
-
             System.out.print("A - 1 Ton (10 ft) with 2 movers\nB - 3 Ton (17 ft) with 3 movers\nC - 5 Ton (17 ft) with 5 movers\n\nEnter lorry type: ");
-            lorryType = input.next().charAt(0);
-            lorryType = Character.toUpperCase(lorryType);
+            lorryType = Character.toUpperCase(input.next().charAt(0));
 
             System.out.print("Do you need a driver? (Y/N): ");
             char driverChar = input.next().charAt(0);
@@ -95,13 +85,9 @@ public class Main {
             }
 
             System.out.print("\nDo you want to search for another renter? (Y/N): ");
-            searchChar = input.next().charAt(0);
-            searchChar = Character.toUpperCase(searchChar);
+            searchChar = Character.toUpperCase(input.next().charAt(0));
         }
-
         System.out.println("Thank you for using Lorry Rental System\n\nDeveloped by: InsanSoftHouse Sdn Bhd");
-
         input.close();
-
     }
 }
