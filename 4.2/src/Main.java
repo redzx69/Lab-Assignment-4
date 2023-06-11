@@ -16,7 +16,7 @@ public class Main {
 
         String name, contactNo, streetName, district, state;
         double travelDistance;
-        char lorrytype;
+        char lorryType;
         boolean driver;
 
         for (int i = 0; i < size; i++) {
@@ -38,10 +38,9 @@ public class Main {
             System.out.print("Enter travel distance (KM): ");
             travelDistance = input.nextDouble();
 
-            System.out.print(
-                    "A - 1 Ton (10 ft) with 2 movers\nB - 3 Ton (17 ft) with 3 movers\nC - 5 Ton (17 ft) with 5 movers\n\nEnter lorry type: ");
-            lorrytype = input.next().charAt(0);
-            lorrytype = Character.toUpperCase(lorrytype);
+            System.out.print("A - 1 Ton (10 ft) with 2 movers\nB - 3 Ton (17 ft) with 3 movers\nC - 5 Ton (17 ft) with 5 movers\n\nEnter lorry type: ");
+            lorryType = input.next().charAt(0);
+            lorryType = Character.toUpperCase(lorryType);
 
             System.out.print("Do you need a driver? (Y/N): ");
             char driverChar = input.next().charAt(0);
@@ -53,7 +52,7 @@ public class Main {
                 driver = false;
             }
 
-            renters[i] = new Renter(name, contactNo, streetName, district, state, travelDistance, lorrytype, driver);
+            renters[i] = new Renter(name, contactNo, streetName, district, state, travelDistance, lorryType, driver);
 
             input.nextLine();
             System.out.println();
@@ -61,7 +60,7 @@ public class Main {
 
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (renters[i].getLorrytype() == 'A' && !renters[i].getDriver()) {
+            if (renters[i].getLorryType() == 'A' && !renters[i].getDriver()) {
                 count++;
             }
         }
@@ -69,7 +68,7 @@ public class Main {
         System.out.println("Number of renters who choose 1-ton lorry with no driver option: " + count);
 
         for (int i = 0; i < size; i++) {
-            if (renters[i].getLorrytype() == 'A' && !renters[i].getDriver()) {
+            if (renters[i].getLorryType() == 'A' && !renters[i].getDriver()) {
                 System.out.println("\nRenter who choose 1-ton lorry with no driver option:\n");
                 renters[i].displayRenter();
             }

@@ -38,7 +38,7 @@ public class Renter {
         return travelDistance;
     }
 
-    public char getLorrytype() {
+    public char getLorryType() {
         return lorrytype;
     }
 
